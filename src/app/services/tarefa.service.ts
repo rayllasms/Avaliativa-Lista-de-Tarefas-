@@ -3,7 +3,7 @@ import { type ITarefa } from '../models/tarefa.model';
 
 @Injectable({ providedIn: 'root' })
 export class TarefaService {
-  private tarefas: Array<ITarefa> = [];
+  private tarefas: Array<ITarefa> = [ {id: '1', nome: 'Limpar', data: '2026-11-10', prioridade: 'Baixo', categoria: 'domestico'}];
 
   listar(): Array<ITarefa> {
     return this.tarefas;
@@ -30,4 +30,6 @@ export class TarefaService {
       this.tarefas.splice(posicao, 1);
     }
   }
+
+
 }
