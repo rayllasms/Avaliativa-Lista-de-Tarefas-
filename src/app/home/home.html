@@ -16,7 +16,7 @@
       <p class="card-text text-muted fw-semibold">
         Vencimento {{ tarefa.data | date: 'dd/MM/yyyy' }}
       </p>
-      <a class="btn btn-warning btn-sm me-2" [routerLink]="['/tarefa-atualiza', tarefa.id]">
+         <a class="btn btn-warning btn-sm me-2" [routerLink]="['/tarefa-atualiza', tarefa.id]">
         Editar <i class="bi bi-pencil-square"></i>
       </a>
       <button class="btn btn-danger btn-sm" (click)="deletar(tarefa.id)">

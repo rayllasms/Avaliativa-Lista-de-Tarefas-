@@ -6,5 +6,5 @@ import {TarefaAtualiza} from './tarefa-atualiza/tarefa-atualiza';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'tarefa-nova', component: TarefaNova },
-  { path: 'tarefa-atualiza/:i', component: TarefaAtualiza }
+  { path: 'tarefa-atualiza/:id', component: TarefaAtualiza }
 ];
