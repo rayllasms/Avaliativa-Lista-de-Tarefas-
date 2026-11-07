@@ -1,18 +1,13 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TarefaService } from './services/tarefa.service';
+import {Header} from './header/header';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Header],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
   protected readonly title = signal('tarefas-ng');
-  private tarefaService = inject(TarefaService);
-
-  constructor() {
-    console.log(this.tarefaService.listar());
-  }
 }
