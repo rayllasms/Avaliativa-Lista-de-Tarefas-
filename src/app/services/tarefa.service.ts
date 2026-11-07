@@ -1,6 +1,11 @@
-import { Service } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { type ITarefa } from '../models/tarefa.model';
 
+@Injectable({ providedIn: 'root' })
+export class TarefaService {
+  private tarefas: Array<ITarefa> = [];
 
-
-@Service()
-export class TarefaService {}
+  listar(): Array<ITarefa> {
+    return this.tarefas;
+  }
+}
