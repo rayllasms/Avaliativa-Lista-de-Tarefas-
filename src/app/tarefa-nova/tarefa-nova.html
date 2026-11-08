@@ -1,15 +1,15 @@
 <div class="bg-success text-white text-center fs-4 py-1 mb-3">Nova Tarefa</div>
 
-<form class="px-3" (ngSubmit)="salvar()">
+<form class="px-3" #formulario="ngForm" (ngSubmit)="salvar()">
   <div class="mb-3">
     <label class="form-label" for="nome">Nome</label>
     <input id="nome" name="nome" type="text" class="form-control"
-           placeholder="Informe a tarefa" [(ngModel)]="tarefa.nome">
+           placeholder="Informe a tarefa" required [(ngModel)]="tarefa.nome">
   </div>
 
   <div class="mb-3">
     <label class="form-label" for="prioridade">Prioridade</label>
-    <select id="prioridade" name="prioridade" class="form-select"
+    <select id="prioridade" name="prioridade" class="form-select" required
             [(ngModel)]="tarefa.prioridade">
       <option value="Alto">Alto</option>
       <option value="Médio">Médio</option>
@@ -19,13 +19,13 @@
 
   <div class="mb-3">
     <label class="form-label" for="data">Data limite</label>
-    <input id="data" name="data" type="date" class="form-control"
+    <input id="data" name="data" type="date" class="form-control" required
            [(ngModel)]="tarefa.data">
   </div>
 
   <div class="mb-2">
     <label class="form-label" for="categoria">Categoria</label>
-    <input id="categoria" name="categoria" type="text" class="form-control"
+    <input id="categoria" name="categoria" type="text" class="form-control" required
            readonly [(ngModel)]="tarefa.categoria">
   </div>
 
@@ -36,5 +36,5 @@
     </button>
   </div>
 
-  <button type="submit" class="btn btn-success">Salvar</button>
+  <button type="submit" class="btn btn-success" [disabled]="formulario.invalid" >Salvar</button>
 </form>

@@ -29,7 +29,10 @@ export class TarefaNova {
   }
 
   salvar(): void {
-    this.tarefaService.cadastrar(this.tarefa);
-    this.router.navigate(['/']);
+  if (!this.tarefa.nome.trim()) {
+    return;
   }
+  this.tarefaService.cadastrar(this.tarefa);
+  this.router.navigate(['/']);
+}
 }
